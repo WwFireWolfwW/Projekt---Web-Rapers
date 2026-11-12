@@ -1,0 +1,4 @@
+:root {
+    --zluta: #ffd700; /*Vkláda se to pak do color pomocí var(--zluta); */
+    --odsazeni: 50px
+}
