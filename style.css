@@ -1,0 +1,5 @@
+/* Zpětně kompatibilní vstup; pravidla jsou rozdělena podle odpovědnosti. */
+@import url("css/tokens.css");
+@import url("css/base.css");
+@import url("css/components.css");
+@import url("css/pages/home.css");

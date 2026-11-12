@@ -1,0 +1,10 @@
+# Local editor settings and diagnostic logs
+.vscode/
+*.log
+Thumbs.db
+.DS_Store
+
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
