@@ -39,9 +39,12 @@ Hodnoty `TODO` jsou záměrně zachované z dat. Karty používají portréty z 
 ## Obsah a obrázky
 
 Web vznikl pro vzdělávací účely. Fotografie, obaly alb a ochranné známky náleží jejich příslušným vlastníkům.
+<<<<<<< HEAD
 
 ## Supabase
 
 Migrace, seed, RLS a API vrstva jsou nasazené v projektu `vuivadirkaexnxqyasei`. Frontend používá veřejný anon klíč; při výpadku přejde na JSON zálohu s informací „Zobrazena offline data“. Vzdálené testy RLS a REST prošly, security advisors jsou bez varování.
 
 Seznam tabulek, politik, provedené testy a postup dokončení: [docs/SUPABASE.md](docs/SUPABASE.md). API testy: `node tests/api.test.mjs`.
+=======
+>>>>>>> c58c7368bb0da70f53b7b193012fe5e08c5db6c1

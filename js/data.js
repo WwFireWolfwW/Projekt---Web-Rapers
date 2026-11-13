@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import { SUPABASE_URL } from "./config.js";
 
+=======
+>>>>>>> c58c7368bb0da70f53b7b193012fe5e08c5db6c1
 // Společné načítání dat a bezpečné vytváření obsahu bez HTML řetězců.
 export async function loadArtists() {
     const response = await fetch(new URL("../data/artists.json", import.meta.url), { signal: AbortSignal.timeout(8000) });
@@ -32,6 +35,7 @@ export function externalLink(url, className, text) {
 
 export function picture(path, alt, lazy = true) {
     const image = element("img");
+<<<<<<< HEAD
     // Místní obrázky a veřejné objekty dvou bucketů potvrzeného projektu.
     if (typeof path === "string" && path.startsWith("images/") && !path.split("/").includes("..") && !path.includes("\\")) {
         image.src = path.split("/").map(encodeURIComponent).join("/");
@@ -45,6 +49,11 @@ export function picture(path, alt, lazy = true) {
         } catch {
             // Neplatná adresa se nepoužije jako zdroj obrázku.
         }
+=======
+    // Povolené jsou pouze obrázky uvnitř místní složky images.
+    if (typeof path === "string" && path.startsWith("images/") && !path.split("/").includes("..") && !path.includes("\\")) {
+        image.src = path.split("/").map(encodeURIComponent).join("/");
+>>>>>>> c58c7368bb0da70f53b7b193012fe5e08c5db6c1
     }
     image.alt = alt;
     image.loading = lazy ? "lazy" : "eager";
