@@ -88,12 +88,12 @@ test("Selhání obou zdrojů vyvolá chybu", async () => {
     await assert.rejects(api.getArtists(), /místní zálohy/);
 });
 
-test("Spolupráce mají online dotaz i prázdnou zálohu", async () => {
+test("Spolupráce mají online dotaz i zálohu doložených dat", async () => {
     const { api, calls } = await setup();
     assert.equal((await api.getCollaborations()).source, "supabase");
     assert.equal(calls[0][1], "collaborations");
     const offline = await setup({ configured: false });
     const result = await offline.api.getCollaborations();
     assert.equal(result.source, "offline");
-    assert.equal(result.data.length, 0);
+    assert.equal(result.data.length, artists.flatMap(artist => artist.collaborations ?? []).length);
 });
