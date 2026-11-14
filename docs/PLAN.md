@@ -2,11 +2,7 @@
 
 Výchozí stav: statický web s úvodní stránkou, 12 samostatnými HTML profily, styly `style.css`, `InterStyles.css`, `Giga.css` a skriptem `index.js`. Úvodní stránka již obsahuje hledání, filtry CZ/SK a časovou osu.
 
-<<<<<<< HEAD
 Stav k 14. 11. 2026: fáze 1 a 2 jsou implementované, vizuální kontrola zůstává ruční. Fáze 3 a 4 jsou implementované a nasazené do potvrzeného Supabase projektu; prošly vzdálené RLS a REST testy a security advisors jsou bez varování. Podrobnosti a výsledky kontrol jsou v `docs/SUPABASE.md`. Fáze 5–8 nejsou dokončené. Pro každou fázi platí pravidla z `AGENTS.md`, zachování tmavého glass vzhledu a použití údajů pouze z existujících HTML souborů; chybějící údaje a rozpory označit `TODO`.
-=======
-Všechny fáze jsou zatím neprovedené. Tento dokument pouze plánuje další práci. Pro každou fázi platí pravidla z `AGENTS.md`, zachování tmavého glass vzhledu a použití údajů pouze z existujících HTML souborů; chybějící údaje a rozpory označit `TODO`.
->>>>>>> c58c7368bb0da70f53b7b193012fe5e08c5db6c1
 
 ## 1) Data do JSON a jedna šablona profilu
 

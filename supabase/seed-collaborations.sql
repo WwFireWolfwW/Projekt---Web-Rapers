@@ -1,0 +1,2 @@
+-- Pouze dvojice a roky doložené původními HTML. Zdroje: docs/COLLABORATIONS.md.
+insert into public.collaborations (artist_a, artist_b, track_title, year) select a.id,b.id,null,v.year from (values ('viktor-sheen','calin',2023),('sergei-barracuda','hard-rico',2021),('yzomandias','ptk',2024)) v(a,b,year) join public.artists a on a.slug=v.a join public.artists b on b.slug=v.b where not exists (select 1 from public.collaborations c where ((c.artist_a=a.id and c.artist_b=b.id) or (c.artist_a=b.id and c.artist_b=a.id)) and c.year=v.year and c.track_title is null);

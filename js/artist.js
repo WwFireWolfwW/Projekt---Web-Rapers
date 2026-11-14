@@ -1,3 +1,4 @@
+import { discography, relatedArtists, spotifyPlayer } from "./profile-features.js";
 import { element, externalLink, picture } from "./data.js";
 
 import { getArtistBySlug, showDataSource } from "./api.js";
@@ -75,24 +76,13 @@ function renderProfile(artist) {
     sidebar.append(links);
     profile.append(content, sidebar);
 
-    const albums = element("section", "profile-albums glass");
-    const heading = element("h2", "", "Alba");
-    heading.id = "albums-title";
-    albums.setAttribute("aria-labelledby", heading.id);
-    albums.append(heading);
-    const grid = element("div", "album-grid");
-    for (const album of artist.albums) {
-        const card = externalLink(album.spotifyUrl, "album-card") || element("div", "album-card");
-        card.append(picture(album.cover, `Obal: ${album.title}`));
-        const caption = element("div", "album-caption");
-        caption.append(element("h3", "", album.title));
-        caption.append(element("p", "", `${album.type === "TODO" ? "Typ: TODO" : album.type} · ${album.year === "TODO" ? "Rok: TODO" : album.year}`));
-        card.append(caption);
-        grid.append(card);
-    }
-    albums.append(grid);
-    if (!artist.albums.length) albums.append(element("p", "", "TODO — alba nejsou uvedena."));
-    main.replaceChildren(profile, albums);
+    const attribution = element('p', 'attribution');
+    const sources = element('a', '', 'Zdroje fotografií a obalů'); sources.href = 'sources.html#' + artist.slug;
+    attribution.append(sources); sidebar.append(attribution);
+    for (const link of artist.links) { if (link.platform.toLowerCase().includes('spotify')) { const player = spotifyPlayer(link.url, artist.name); if(player)sidebar.append(player); } }
+    main.replaceChildren(profile, discography(artist));
+    relatedArtists(artist, main);
+
 }
 
 try {

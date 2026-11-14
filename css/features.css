@@ -1,0 +1,70 @@
+/* Rozšíření původního glass vzhledu a přístupné ovládání. */
+:root { --accent-cz: #a8caff; --accent-sk: #ffc58f; }
+:root[data-theme="light"] { color-scheme: light; --page: #f0f0f4; --text: #19191f; --muted: #50505b; --line: #00000029; --glass: #ffffffc9; --surface: #ffffffb3; --surface-strong: #dfdfe8; --bright-line: #222; --accent-cz:#17478a; --accent-sk:#804000; }
+body { background: radial-gradient(ellipse at 16% 0%, var(--surface-strong) 0, transparent 700px), var(--page); }
+select, input, button { font: inherit; }
+select, .command-palette input { background: var(--page); color: var(--text); border: 1px solid var(--line); border-radius: 8px; min-height: 44px; padding: 9px; max-width: 100%; }
+:focus-visible { outline: 3px solid var(--text); outline-offset: 4px; }
+button.button { color: var(--text); background: var(--surface-strong); border-color: var(--line); }
+.main-nav { flex-wrap: wrap; gap: 10px 18px; }
+.main-nav a, .footer, .footer-brand, .search-field input, .filter-button, .timeline-year { color: var(--text); }
+.main-nav a:hover, .filter-button:hover { color: var(--text); text-decoration: underline; }
+.site-header { flex-wrap: wrap; }
+.site-tools, .legal-links, .extra-filters, .profile-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.site-tools { margin-left:auto; }
+.legal-links { flex-basis:100%; }
+.legal-links a { padding: 10px 0; text-decoration: underline; text-underline-offset:4px; }
+.extra-filters { margin-top:16px; }
+.extra-filters label, .compare-controls label { display:grid; gap:8px; font-size:13px; flex:1; min-width:160px; }
+.country-tag, .card-arrow, .glass-label { color:#fff; }
+.command-palette { color:var(--text); width:min(620px,calc(100% - 28px)); max-height:85vh; padding:24px; border-radius:20px; }
+.command-palette::backdrop { background:#000a; backdrop-filter:blur(5px); }
+.command-palette label, .command-palette input { display:block; width:100%; margin-top:14px; }
+.command-palette h2 { display:inline; }
+.command-palette > button { float:right; }
+.command-results { padding:0; list-style:none; max-height:45vh; overflow:auto; }
+.command-results li { padding:14px; cursor:pointer; border-radius:8px; }
+.command-results [aria-selected="true"], .command-results li:hover { background:var(--surface-strong); outline:1px solid var(--bright-line); }
+.muted { color:var(--muted); }
+.feature-page { padding-block:40px; }
+.feature-page > h1 { margin-bottom:24px; }
+.info-panel, .comparison-card { padding:clamp(18px,4vw,36px); border-radius:22px; margin-block:20px; line-height:1.8; overflow-wrap:anywhere; }
+.info-panel h2 { margin-block:28px 12px; }
+.info-panel a, .attribution a { text-decoration:underline; }
+.attribution { color:var(--muted); font-size:12px; line-height:1.7; }
+.profile-actions { margin-block:20px; }
+.discography { list-style:none; padding:0 0 0 20px; border-left:1px solid var(--line); }
+.discography > li { margin-block:24px; position:relative; }
+.discography > li::before { content:''; position:absolute; width:9px; height:9px; border-radius:50%; background:var(--text); left:-25px; top:14px; }
+.discography-row { display:grid; grid-template-columns:160px minmax(0,1fr); gap:20px; align-items:start; }
+.discography-row .album-card { width:160px; min-height:160px; }
+.spotify-slot { margin-top:12px; }
+.spotify-slot iframe { display:block; border:0; width:100%; height:352px; border-radius:12px; }
+.similar-artists { margin-top:24px; }
+.similar-artists ul { display:flex; gap:16px; flex-wrap:wrap; padding:0; list-style:none; }
+.compare-controls, .comparison-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.album-chart { display:block; width:100%; height:auto; max-height:360px; }
+.album-chart text { fill:var(--text); font-family:var(--font-body); font-size:12px; }
+.chart-a, .node-cz { fill:var(--accent-cz); }
+.chart-b, .node-sk { fill:var(--accent-sk); }
+.table-scroll { overflow-x:auto; max-width:100%; }
+table { border-collapse:collapse; width:100%; text-align:left; font-size:14px; }
+caption { text-align:left; font-weight:600; padding-block:16px; }
+th, td { padding:12px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { color:var(--text); }
+.network-graph { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:18px; background:var(--surface); }
+.network-edge { stroke:var(--muted); opacity:.7; }
+.network-node { cursor:pointer; }
+.network-node circle { stroke:var(--page); stroke-width:2; }
+.network-node text { fill:var(--text); font-size:12px; paint-order:stroke; stroke:var(--page); stroke-width:3px; }
+.network-node:focus-visible { outline:none; }
+.network-node:focus-visible circle { stroke:var(--text); stroke-width:5; }
+[data-theme="light"] .hero-description, [data-theme="light"] .about-copy p, [data-theme="light"] .profile-copy p, [data-theme="light"] .profile-copy li, [data-theme="light"] .profile-facts dd, [data-theme="light"] h1 span { color:var(--muted); }
+[data-theme="light"] .profile-links .button { color:var(--text); }
+@media(max-width:600px) { .comparison-grid, .compare-controls { grid-template-columns:1fr; } .discography-row { grid-template-columns:1fr; } .site-tools { margin-inline:0; width:100%; justify-content:center; } .extra-filters label { min-width:100%; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *, *::before, *::after { animation:none; transition:none; } }
+
+.responsive-picture { display:contents; }
+.hero-feature { color:#fff; }
+[data-theme="light"] .hero-text, [data-theme="light"] .scene-strip { color:var(--muted); }
+[data-theme="light"] .profile-links { background:var(--surface); }

@@ -40,7 +40,7 @@ function mapArtist(row) {
         links: ordered(row.links).map(link => ({ platform: link.platform, url: link.url })),
         albums: ordered(row.albums).map(album => ({
             id: album.id, title: album.title, year: known(album.release_year), releaseDate: album.release_date,
-            type: album.type === "ep" ? "EP" : known(album.type), cover: album.cover, spotifyUrl: album.spotify_url
+            type: album.type === "ep" ? "EP" : known(album.type), cover: album.cover, coverSourceUrl: album.cover_source_url, spotifyUrl: album.spotify_url
         })),
         collaborations: [], sourceFile: row.source_file, todos: row.todos ?? []
     };

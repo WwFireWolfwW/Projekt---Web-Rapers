@@ -141,7 +141,20 @@
         "spotifyUrl": "https://open.spotify.com/album/4s1hwoCgO5oN6aR8i0WBwr"
       }
     ],
-    "collaborations": [],
+    "collaborations": [
+      {
+        "artistA": {
+          "slug": "yzomandias",
+          "name": "Yzomandias"
+        },
+        "artistB": {
+          "slug": "ptk",
+          "name": "PTK"
+        },
+        "track_title": null,
+        "year": 2024
+      }
+    ],
     "sourceFile": "Yzomandias.html",
     "todos": [
       "TODO: Zpátky na svoji planetu odkazuje na Spotify track, zatímco biografie uvádí album Yzomandias II: Zpátky na svojí planetu (2023); ověřit identitu, typ a rok položky.",
@@ -476,7 +489,20 @@
         "spotifyUrl": "https://open.spotify.com/album/2a3Wonjc4CmqpEycjnHrnu"
       }
     ],
-    "collaborations": [],
+    "collaborations": [
+      {
+        "artistA": {
+          "slug": "viktor-sheen",
+          "name": "Viktor Sheen"
+        },
+        "artistB": {
+          "slug": "calin",
+          "name": "Calin"
+        },
+        "track_title": null,
+        "year": 2023
+      }
+    ],
     "sourceFile": "ViktorSheen.html",
     "todos": [
       "TODO: activeFrom není v HTML jednoznačně uvedeno.",
@@ -916,7 +942,20 @@
         "spotifyUrl": "https://open.spotify.com/album/5UI4UBnJm7iIs2nHQJYC4X"
       }
     ],
-    "collaborations": [],
+    "collaborations": [
+      {
+        "artistA": {
+          "slug": "sergei-barracuda",
+          "name": "Sergei Barracuda"
+        },
+        "artistB": {
+          "slug": "hard-rico",
+          "name": "Hard Rico"
+        },
+        "track_title": null,
+        "year": 2021
+      }
+    ],
     "sourceFile": "Sergei.html",
     "todos": [
       "TODO: birthDate není v HTML jednoznačně uvedeno.",
