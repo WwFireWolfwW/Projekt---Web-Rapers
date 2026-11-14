@@ -1,3 +1,5 @@
+import { suggestionForm } from "./community.js";
+import { favoriteButton } from "./favorites.js";
 import { discography, relatedArtists, spotifyPlayer } from "./profile-features.js";
 import { element, externalLink, picture } from "./data.js";
 
@@ -52,6 +54,7 @@ function renderProfile(artist) {
     sidebar.setAttribute("aria-label", `Základní údaje a odkazy: ${artist.name}`);
     const portrait = element("div", "profile-photo");
     portrait.append(picture(artist.photo, artist.name, false));
+    sidebar.append(favoriteButton(artist));
     sidebar.append(portrait, element("h2", "facts-title", "Základní údaje"));
     const facts = element("dl", "profile-facts");
     const birthDate = /^\d{4}-\d{2}-\d{2}$/.test(artist.birthDate)
@@ -81,6 +84,7 @@ function renderProfile(artist) {
     attribution.append(sources); sidebar.append(attribution);
     for (const link of artist.links) { if (link.platform.toLowerCase().includes('spotify')) { const player = spotifyPlayer(link.url, artist.name); if(player)sidebar.append(player); } }
     main.replaceChildren(profile, discography(artist));
+    if (artist.id) main.append(suggestionForm(artist));
     relatedArtists(artist, main);
 
 }

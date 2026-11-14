@@ -1,3 +1,4 @@
+import { ratingPanel } from "./community.js";
 import { element, externalLink, picture, profileUrl } from './data.js';
 import { getArtists, showDataSource } from './api.js';
 export function spotifyPlayer(url, title) {
@@ -23,7 +24,7 @@ export function discography(artist) {
     const list=element('ol','discography');
     const sorted=[...artist.albums].sort((a,b)=>(Number(a.year)||Infinity)-(Number(b.year)||Infinity));
     function render(){ list.replaceChildren(); const albums=sorted.filter(album=>filter.value==='all'||String(album.type).toLowerCase()===filter.value);
-        for(const album of albums){const item=element('li'); const row=element('div','discography-row'); const cover=externalLink(album.spotifyUrl,'album-card')||element('div','album-card'); cover.append(picture(album.cover,'Obal: '+album.title)); const copy=element('div'); copy.append(element('p','eyebrow',Number(album.year)?String(album.year):'Rok: TODO'),element('h3','',album.title),element('p','muted','Typ: '+(album.type||'TODO'))); const player=spotifyPlayer(album.spotifyUrl,album.title); if(player)copy.append(player); row.append(cover,copy);item.append(row);list.append(item); }
+        for(const album of albums){const item=element('li'); const row=element('div','discography-row'); const cover=externalLink(album.spotifyUrl,'album-card')||element('div','album-card'); cover.append(picture(album.cover,'Obal: '+album.title)); const copy=element('div'); copy.append(element('p','eyebrow',Number(album.year)?String(album.year):'Rok: TODO'),element('h3','',album.title),element('p','muted','Typ: '+(album.type||'TODO'))); const player=spotifyPlayer(album.spotifyUrl,album.title); if(player)copy.append(player); if(album.id)copy.append(ratingPanel(album)); row.append(cover,copy);item.append(row);list.append(item); }
         status.textContent=albums.length ? albums.length+' vydání. Neznámé roky jsou na konci.' : 'Žádná vydání tohoto typu.';
     } filter.addEventListener('change',render); render(); section.append(status,list); return section;
 }

@@ -1,10 +1,14 @@
-# Local editor settings and diagnostic logs
+# Místní nastavení a diagnostika
 .vscode/
 *.log
 Thumbs.db
 .DS_Store
+node_modules/
 
-# Local credentials and environment configuration
+# Tajné údaje nikdy nepatří do repozitáře
 .env
 .env.*
 !.env.example
+
+# Samostatná publikační kopie Sites
+.sites/

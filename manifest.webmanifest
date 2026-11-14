@@ -1,0 +1,10 @@
+{
+  "name": "CZ/SK Interpret Wiki",
+  "short_name": "Interpret Wiki",
+  "lang": "cs",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0b0d",
+  "theme_color": "#0b0b0d"
+}

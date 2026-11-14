@@ -16,7 +16,7 @@ applyTheme();
 scheme.addEventListener('change', applyTheme);
 theme.addEventListener('click', () => { preference = ({ auto: 'dark', dark: 'light', light: 'auto' })[preference] || 'auto'; try { localStorage.setItem('wiki-theme', preference); } catch {} applyTheme(); });
 const nav = document.querySelector('.main-nav');
-for (const [url, label] of [['compare.html','Porovnání'],['network.html','Spolupráce']]) {
+for (const [url, label] of [['compare.html','Porovnání'],['network.html','Spolupráce'],['favorites.html','Oblíbené'],['suggestions.html','Moje návrhy'],['quiz.html','Kvíz']]) {
     if (nav && !nav.querySelector('a[href="'+url+'"]')) { const link = element('a','',label); link.href=url; nav.append(link); }
 }
 const tools = element('div','site-tools');
@@ -42,3 +42,8 @@ open.addEventListener('click',showSearch);
 input.addEventListener('input',search);
 input.addEventListener('keydown',event=>{ if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault(); if(matches.length)activate((active+(event.key==='ArrowDown'?1:-1)+matches.length)%matches.length);} if(event.key==='Enter'&&active>=0){event.preventDefault();location.assign(matches[active].url);} });
 document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();showSearch();}});
+
+import { authHeader } from "./auth.js";
+authHeader();
+
+if ("serviceWorker" in navigator) navigator.serviceWorker.register(new URL("../sw.js", import.meta.url)).catch(() => {});

@@ -14,7 +14,7 @@ function withTimeout(promise, milliseconds = TIMEOUT_MS) {
     ]).finally(() => clearTimeout(timer));
 }
 
-async function getClient() {
+export async function getClient() {
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) throw new Error("Supabase zatím není nastavené.");
     // Dynamický import umožňuje fallback i při nedostupném CDN.
     if (!clientPromise) {

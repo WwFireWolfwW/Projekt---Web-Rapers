@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# Sitemap se doplní při sestavení s SITE_URL.

@@ -1,3 +1,4 @@
+import { favoriteButton } from "./js/favorites.js";
 import { element, picture, profileUrl } from "./js/data.js";
 
 import { getArtists, showDataSource } from "./js/api.js";
@@ -60,7 +61,10 @@ function createCard(artist) {
     const caption = element("div", "artist-caption");
     caption.append(element("h3", "", artist.name), element("span", "", "Prozkoumat profil"));
     card.append(photo, caption);
-    return card;
+    const wrapper = element("article", "favorite-card");
+    Object.assign(wrapper.dataset, card.dataset);
+    wrapper.append(card, favoriteButton(artist));
+    return wrapper;
 }
 
 filters.forEach(button => button.addEventListener("click", () => {

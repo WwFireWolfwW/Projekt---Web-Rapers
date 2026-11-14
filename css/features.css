@@ -68,3 +68,11 @@ th { color:var(--text); }
 .hero-feature { color:#fff; }
 [data-theme="light"] .hero-text, [data-theme="light"] .scene-strip { color:var(--muted); }
 [data-theme="light"] .profile-links { background:var(--surface); }
+
+form label { display:grid; gap:8px; margin-block:16px; } form input, form textarea { max-width:100%; padding:12px; border:1px solid var(--line); border-radius:8px; background:var(--page); color:var(--text); font:inherit; } button:disabled { opacity:.55; cursor:wait; }
+
+.favorite-card { min-width:0; display:grid; gap:8px; } .favorite-card .artist-card { display:block; }
+
+.quiz-cover { width:min(100%,320px); margin-block:20px; } .quiz-cover img { width:100%; height:auto; aspect-ratio:1; object-fit:cover; } .rating-panel { margin-top:18px; } .rating-panel article { border-top:1px solid var(--line); padding-block:12px; }
+
+.static-portrait { max-width:100%; height:auto; object-fit:cover; filter:grayscale(1); border-radius:18px; }

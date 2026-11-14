@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0b0d">
+    <meta name="description" content="Poznáš české a slovenské interprety podle obalu alba? Deset otázek, čtyři možnosti a žebříček nejlepších výsledků.">
+    <meta name="author" content="David Syřiště">
+    <link rel="icon" href="images/image-removebg-preview (4).png" type="image/png">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/artist.css">
+
+    <title>Poznej interpreta podle obalu — CZ/SK Interpret Wiki</title>
+    <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/features.css">
+    <script type="module" src="js/site.js"></script>
+<script type="module" src="js/quiz.js"></script><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="css/pages/quiz.css"></head>
+<body>
+    <a class="skip-link" href="#obsah">Přejít na obsah</a>
+    <header class="site-header glass page-width">
+        <a class="brand" href="index.html" aria-label="CZ/SK Interpret Wiki – domů">
+            <img src="images/image-removebg-preview (4).png" width="42" height="42" alt="">
+            <span>CZ/SK<span class="brand-subtitle">INTERPRET WIKI</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Hlavní navigace">
+            <a href="index.html#interpreti">Interpreti</a>
+            <a href="index.html#historie">Scéna v čase</a>
+            <a href="index.html#o-projektu">O projektu</a>
+        </nav>
+        <span class="header-note"><span class="status-dot"></span>Dvě země. Jeden sound.</span>
+    </header>
+    <p id="data-source" class="data-source page-width" role="status" hidden></p>
+    <main class="page-width quiz-page" id="obsah" tabindex="-1">
+        <div class="quiz-intro"><div><p class="eyebrow">Otestuj svůj přehled</p><h1>Poznáš je <span>podle obalu?</span></h1><p class="quiz-lead">Deska může říct víc než tisíc slov. Spoj obal s interpretem a zjisti, jak dobře znáš CZ/SK scénu.</p></div><div class="quiz-rules"><span><strong>10</strong> otázek</span><span><strong>4</strong> možnosti</span><span><strong>∞</strong> času</span></div></div>
+        <div class="quiz-layout"><section class="quiz-stage glass" aria-label="Hudební kvíz"><div class="quiz-stage-top"><span class="eyebrow">Hádej podle coveru</span><span id="quiz-counter">01 / 10</span></div><progress id="quiz-progress" max="10" value="0" aria-label="Dokončené otázky">0 z 10</progress><p id="quiz-status" class="quiz-feedback" role="status">Připravujeme tvoji desítku…</p><div id="quiz-content" aria-busy="true"><div class="quiz-loading skeleton" aria-hidden="true"></div></div></section>
+        <aside class="quiz-ranking glass"><p class="eyebrow">Síň slávy</p><h2>Nejlepší skóre<span>Top 10</span></h2><p class="quiz-ranking-intro">Každý obal se počítá. Kam se zařadíš ty?</p><ol id="leaderboard" aria-label="Deset nejlepších výsledků"><li class="quiz-ranking-empty">Načítání výsledků…</li></ol><div class="quiz-ranking-note"><span aria-hidden="true">↗</span><p>Hraj bez účtu. Pro uložení výsledku se <a href="login.html">přihlas</a>.</p></div><p class="quiz-fairplay">Anonymní výsledky školního kvízu. Skóre počítá prohlížeč.</p></aside></div>
+        <noscript><p>Pro hraní kvízu zapni JavaScript.</p></noscript>
+    </main>
+    <footer class="footer page-width"><a class="footer-brand" href="index.html">CZ/SK <span>INTERPRET WIKI</span></a><span>© 2026 · David Syřiště · Školní projekt</span><a href="#obsah">Zpátky nahoru <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>
